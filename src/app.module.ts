@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ServicesModule } from './services/services.module'; // <-- This must be imported
+import { BookingsModule } from './bookings/bookings.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { ServicesModule } from './services/services.module'; // <-- This must be
     }),
     UsersModule,
     AuthModule,
-    ServicesModule, // <-- This must be in the array
+    ServicesModule,
+    BookingsModule, // <-- This must be in the array
   ],
   controllers: [AppController],
   providers: [AppService],
