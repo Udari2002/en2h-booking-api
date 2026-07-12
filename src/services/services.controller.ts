@@ -2,7 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@n
 import { ServicesService } from './services.service';
 import { CreateServiceDto } from './dto/create-service.dto';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiTags('Services')
+@ApiBearerAuth() // This adds the lock icon to all endpoints in this controller in Swagger
 @Controller('services')
 @UseGuards(AuthGuard('jwt'))
 export class ServicesController {
